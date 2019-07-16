@@ -42,13 +42,19 @@ Elapsed 1op: 4.24660952450000000000us
 
 The elasped microseconds per 1 operation when test 1M operations with 10 iterations.
 
-| Redis | SimpleKV |
-| ----- | -------- |
-| 3.3us | 4.2us    |
+| Machine | Redis | SimpleKV-JS | SimpleKV-Rust-tokio |
+| ------- | ----- | ----------- | ------------------- |
+| i7-8850 | 3.3us | 4.2us       |                     |
+| i5-6600 | 1.5us | 1.8us       | 0.7us               |
 
 ### Test machine
 
 ```text
 Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
 MemTotal:       16287784 kB
+```
+
+```text
+Intel(R) Core(TM) i5-6600 CPU @ 3.30GHz
+MemTotal:       16344936 kB
 ```
