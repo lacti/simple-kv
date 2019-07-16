@@ -1,0 +1,21 @@
+[package]
+name = "simple-kv"
+version = "0.1.0"
+authors = ["Gyusun Yeom <omniavinco@gmail.com>"]
+
+[dependencies]
+hashbrown = "0.5"
+mio = { version = "0.6", optional = true }
+tokio-io = { version = "0.1.12", optional = true }
+tokio-core = { version = "0.1.17", optional = true }
+futures = { version = "0.1.28", optional = true }
+
+[features]
+std_net = []
+mio_net = ["mio"]
+tokio_net = ["tokio-io", "tokio-core", "futures"]
+
+[profile.release]
+debug = true
+lto = true
+overflow-checks = false
